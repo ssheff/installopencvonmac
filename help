@@ -1,0 +1,91 @@
+How to pip install OpenCV on macOS
+MacOS is similar to Ubuntu for pip-installing OpenCV.
+
+Again, you have two options to install OpenCV on macOS with pip:
+
+Install into your system site-packages
+Install into a virtual environment’s  site-packages  (preferred)
+Install pip
+If you don’t have pip, you’ll need to obtain it first:
+
+pip install opencvShell
+$ wget https://bootstrap.pypa.io/get-pip.py
+$ sudo python3 get-pip.py
+
+$ wget https://bootstrap.pypa.io/get-pip.py
+$ sudo python3 get-pip.py
+Option A: Install OpenCV to your macOS system with pip
+Don’t do this.
+
+Why? I actually recommend that you go to the Option B and use a virtual environment.
+
+Okay, well if you insist on installing on your macOS system, then it’s just as easy as pip installing OpenCV via:
+
+pip install opencvShell
+$ sudo pip install opencv-contrib-python
+
+$ sudo pip install opencv-contrib-python
+In a matter of seconds, OpenCV is ready to go in your system’s site-packages.
+
+Option B: Install OpenCV on macOS into a virtual environment with pip
+Just like managing packages is a breeze with pip….
+
+…managing projects and their dependencies is a breeze with virtual environments.
+
+You should use Python virtual environments if you’re serious about computer vision development (or any development for that matter).
+
+I don’t care what system you use (be it virtualenv , venv , or conda  /Anaconda), just learn to use one and stick with it.
+
+Here’s how to install virtualenv and virtualenvwrapper, both of which will live in your system site-packages and manage each project’s virtual environment site-packages:
+
+pip install opencvShell
+$ pip install virtualenv virtualenvwrapper
+
+$ pip install virtualenv virtualenvwrapper
+From there, you need to add the following lines to your ~/.bash_profile  (notice that for macOS the file name is .bash_profile  and for Ubuntu it is .bashrc .
+
+Open the file using nano , vim , or emacs  ( nano  comes on most systems):
+
+pip install opencvShell
+$ nano ~/.bash_profile
+
+$ nano ~/.bash_profile
+…and append these lines to the end:
+
+pip install opencvShell
+# virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
+
+# virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
+Save the file — if you are using nano  the keyboard shortcuts are listed at the bottom of the window.
+
+Then “source it” in your terminal:
+
+pip install opencvShell
+$ source ~/.bash_profile
+1
+$ source ~/.bash_profile
+You’ll see a few lines of terminal output indicating that virtualenvwrapper is set up. You now have access to new terminal commands:
+
+mkvirtualenv : Make a new virtual environment.
+workon : Activate/switch to a virtual environment. Remember, you can have as many environments as you’d like.
+deactivate : Jumps out of a virtual environment and you’ll be working with your system.
+rmvirtualenv : Deletes a virtual environment.
+Be sure to read the docs!
+Let’s create a Python 3 virtual environment for OpenCV called cv:
+
+pip install opencvShell
+$ mkvirtualenv cv -p python3
+
+$ mkvirtualenv cv -p python3
+And now, using pip, and with a blink of an eye, you can pip install OpenCV on macOS in a matter of seconds into your new environment:
+
+pip install opencvShell
+$ pip install opencv-contrib-python
+
+$ pip install opencv-contrib-python
