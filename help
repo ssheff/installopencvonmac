@@ -3,6 +3,7 @@ MacOS is similar to Ubuntu for pip-installing OpenCV.
 
 Again, you have two options to install OpenCV on macOS with pip:
 
+pip install opencv-python
 Install into your system site-packages
 Install into a virtual environment’s  site-packages  (preferred)
 Install pip
